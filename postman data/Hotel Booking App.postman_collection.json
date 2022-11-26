@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "5fb7cf43-2a73-4aea-8577-e9d8c159d540",
+		"name": "Hotel Booking App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21312526"
+	},
+	"item": [
+		{
+			"name": "Saving Booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromDate\": \"2023-01-20\",\n    \"toDate\": \"2023-01-25\",\n    \"aadharNumber\": \"123456789\",\n    \"numOfRooms\": 6\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/hotel/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"hotel",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Payment Details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentMode\": \"UPI\",\n    \"bookingId\": 6,\n    \"upiId\": \"\",\n    \"cardNumber\": \"121231\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/hotel/booking/2/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"hotel",
+						"booking",
+						"2",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/payment/transaction/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"payment",
+						"transaction",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
